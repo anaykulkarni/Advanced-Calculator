@@ -36,7 +36,7 @@ public class ExponentiationAndLogarithmicModule {
     /**
      * This method simply returns the value of log<sub>e</sub>(x).
      * @param x input for log function.
-     * @return returns the value of log<sub>10</sub>(x)
+     * @return returns the value of log<sub>e</sub>(x)
      */
     public double lnX(double x){
         return Math.log(x);
@@ -45,7 +45,7 @@ public class ExponentiationAndLogarithmicModule {
     /**
      * This method simply returns the value of log<sub>10</sub>(x).
      * @param x input for log function.
-     * @return returns the value of log<sub>e</sub>(x)
+     * @return returns the value of 10<sup>x</sup>
      */
     public double tenPowerX( int x ){
         return Math.pow(10, x);        
