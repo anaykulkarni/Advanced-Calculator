@@ -51,6 +51,7 @@ public class CalulatorJFrame extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1100, 750));
@@ -82,7 +83,6 @@ public class CalulatorJFrame extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Scientific Calculator");
 
         javax.swing.GroupLayout btn_1Layout = new javax.swing.GroupLayout(btn_1);
         btn_1.setLayout(btn_1Layout);
@@ -129,7 +129,6 @@ public class CalulatorJFrame extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Programmer's Calculator");
 
         javax.swing.GroupLayout btn_2Layout = new javax.swing.GroupLayout(btn_2);
         btn_2.setLayout(btn_2Layout);
@@ -176,7 +175,6 @@ public class CalulatorJFrame extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Date Calculator");
 
         javax.swing.GroupLayout btn_3Layout = new javax.swing.GroupLayout(btn_3);
         btn_3.setLayout(btn_3Layout);
@@ -204,7 +202,6 @@ public class CalulatorJFrame extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Calculator");
 
         javax.swing.GroupLayout sidePaneLayout = new javax.swing.GroupLayout(sidePane);
         sidePane.setLayout(sidePaneLayout);
@@ -236,6 +233,19 @@ public class CalulatorJFrame extends javax.swing.JFrame {
         );
 
         getContentPane().add(sidePane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 750));
+
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 860, Short.MAX_VALUE)
+        );
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 860, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -325,6 +335,7 @@ public class CalulatorJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel sidePane;
     // End of variables declaration//GEN-END:variables
 }
