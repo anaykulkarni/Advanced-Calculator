@@ -1,9 +1,11 @@
+package calculator.scientificcalculator;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package scientificcalculator;
+
 
 /**
  * The class ArithmeticModule performs the arithmetic calculations of the scientific calculator
@@ -17,7 +19,7 @@ public class ArithmeticModule {
      * This method simply returns the square of the number x.
      * @param x The number whose square is required.
      * @return The square of x.
-     */
+     */    
     public double xSquare(double x){
         return (x*x);
     }
