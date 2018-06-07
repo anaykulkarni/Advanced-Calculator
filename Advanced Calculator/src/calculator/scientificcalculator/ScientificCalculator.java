@@ -17,7 +17,7 @@ public class ScientificCalculator {
     /*
      * The modules of the scientific calculator.
      */
-    public ArithmeticModule arihtmetiModule;
+    public ArithmeticModule arihtmeticModule;
     public ExponentiationAndLogarithmicModule exponentialAndLogarithmicModule;
     public TrignometricModule trignometricModule;
     public ExpressionEvaluatorModule evaluator;
@@ -26,7 +26,7 @@ public class ScientificCalculator {
      * This method sets up the calculator by initializing the modules.
      */
     public void setUp(){
-        arihtmetiModule = new ArithmeticModule();
+        arihtmeticModule = new ArithmeticModule();
         exponentialAndLogarithmicModule = new ExponentiationAndLogarithmicModule();
         trignometricModule = new TrignometricModule();
         evaluator = new ExpressionEvaluatorModule();

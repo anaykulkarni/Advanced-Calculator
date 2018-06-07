@@ -26,7 +26,7 @@ public class ExpressionEvaluatorModule {
      * @param expression the expression to be evaluated.
      * @return the value of the computed expression.
      */
-    public static String evaluate( String expression ){
+    public String evaluate( String expression ){
         String result="";
         try{
             result = jsEngine.eval(expression).toString();
