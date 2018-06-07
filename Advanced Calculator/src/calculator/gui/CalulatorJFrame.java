@@ -52,8 +52,20 @@ public class CalulatorJFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
+        mainHeaderPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sidePane.setBackground(new java.awt.Color(0, 153, 255));
@@ -82,6 +94,7 @@ public class CalulatorJFrame extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Scientific Calculator");
 
         javax.swing.GroupLayout btn_1Layout = new javax.swing.GroupLayout(btn_1);
         btn_1.setLayout(btn_1Layout);
@@ -128,6 +141,7 @@ public class CalulatorJFrame extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Programmer's Calculator");
 
         javax.swing.GroupLayout btn_2Layout = new javax.swing.GroupLayout(btn_2);
         btn_2.setLayout(btn_2Layout);
@@ -174,6 +188,7 @@ public class CalulatorJFrame extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Date Calculator");
 
         javax.swing.GroupLayout btn_3Layout = new javax.swing.GroupLayout(btn_3);
         btn_3.setLayout(btn_3Layout);
@@ -183,7 +198,7 @@ public class CalulatorJFrame extends javax.swing.JFrame {
                 .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(jLabel11)
-                .addGap(0, 80, Short.MAX_VALUE))
+                .addGap(0, 95, Short.MAX_VALUE))
         );
         btn_3Layout.setVerticalGroup(
             btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,6 +216,7 @@ public class CalulatorJFrame extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Calculator");
 
         javax.swing.GroupLayout sidePaneLayout = new javax.swing.GroupLayout(sidePane);
         sidePane.setLayout(sidePaneLayout);
@@ -228,10 +244,10 @@ public class CalulatorJFrame extends javax.swing.JFrame {
                 .addComponent(btn_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(296, Short.MAX_VALUE))
+                .addContainerGap(266, Short.MAX_VALUE))
         );
 
-        getContentPane().add(sidePane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 750));
+        getContentPane().add(sidePane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 240, 720));
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -245,6 +261,36 @@ public class CalulatorJFrame extends javax.swing.JFrame {
         );
 
         getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 860, 720));
+
+        mainHeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
+        mainHeaderPanel.setPreferredSize(new java.awt.Dimension(242, 30));
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calculator/images/close.png"))); // NOI18N
+        jLabel1.setPreferredSize(new java.awt.Dimension(30, 30));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel1MousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout mainHeaderPanelLayout = new javax.swing.GroupLayout(mainHeaderPanel);
+        mainHeaderPanel.setLayout(mainHeaderPanelLayout);
+        mainHeaderPanelLayout.setHorizontalGroup(
+            mainHeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainHeaderPanelLayout.createSequentialGroup()
+                .addContainerGap(1060, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        mainHeaderPanelLayout.setVerticalGroup(
+            mainHeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainHeaderPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        getContentPane().add(mainHeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 1100, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -266,6 +312,22 @@ public class CalulatorJFrame extends javax.swing.JFrame {
         ind_3.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_1}, new JPanel[]{ind_1, ind_2});
     }//GEN-LAST:event_btn_3MouseReleased
+
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_formMouseDragged
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_formMousePressed
+
+    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
+        System.exit(0);
+    }//GEN-LAST:event_jLabel1MousePressed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -329,11 +391,13 @@ public class CalulatorJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel ind_1;
     private javax.swing.JPanel ind_2;
     private javax.swing.JPanel ind_3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel mainHeaderPanel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel sidePane;
     // End of variables declaration//GEN-END:variables
