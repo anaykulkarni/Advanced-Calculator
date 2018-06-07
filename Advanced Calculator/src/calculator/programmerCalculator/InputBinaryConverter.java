@@ -7,7 +7,7 @@ package calculator.programmerCalculator;
 
 /**
  *
- * @author kisho
+ * @author kishore
  */
 public class InputBinaryConverter {
     
@@ -24,10 +24,10 @@ public class InputBinaryConverter {
 
     String convertBinaryToOctal(String inputBinaryValue) {
         int decimalConversion = Integer.parseInt(convertBinaryToDecimal(inputBinaryValue));
-       return (Integer.toOctalString(decimalConversion));
+        return (Integer.toOctalString(decimalConversion));
     }
     String convertBinaryToHexadecimal(String inputBinaryvalue) {
         int decimalConversion = Integer.parseInt(convertBinaryToDecimal(inputBinaryvalue));
-       return (Integer.toHexString(decimalConversion));
+        return (Integer.toHexString(decimalConversion));
     }
 }

@@ -23,10 +23,10 @@ public class InputOctalConverter {
 
     String convertOctalToHexadecimal(String inputOctValue) {
         int decimalConversion = Integer.parseInt(convertOctalToDecimal(inputOctValue));
-       return (Integer.toHexString(decimalConversion));
+        return (Integer.toHexString(decimalConversion));
     }
     String convertOctalToBinary(String inputOctalValue) {
         int decimalConversion = Integer.parseInt(convertOctalToDecimal(inputOctalValue));
-       return (Integer.toBinaryString(decimalConversion));
+        return (Integer.toBinaryString(decimalConversion));
     }
 }

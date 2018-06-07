@@ -24,11 +24,11 @@ public class InputHexadecimalConveter {
 
     String convertHexadecimalToOctal(String inputHexValue) {
         int decimalConversion = Integer.parseInt(convertHexadecimalToDecimal(inputHexValue));
-       return (Integer.toOctalString(decimalConversion));
+        return (Integer.toOctalString(decimalConversion));
     }
     String convertHexadecimalToBinary(String inputHexValue) {
         int decimalConversion = Integer.parseInt(convertHexadecimalToDecimal(inputHexValue));
-       return (Integer.toBinaryString(decimalConversion));
+        return (Integer.toBinaryString(decimalConversion));
     }
     
 }

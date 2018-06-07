@@ -40,39 +40,39 @@ public class InputBinaryConverterTest {
     }
 
     @Test
-   public void convertBinaryToDecimal() {
-       assertEquals("130",binaryConvert.convertBinaryToDecimal("10000010"));
-   }
-   @Test
-   public void convertBinaryToDecimal1() {
-       assertEquals("1000",binaryConvert.convertBinaryToDecimal("1111101000"));
-   }
-   @Test
-   public void convertBinaryToDecimalEdgeCase() {
-       assertEquals("0",binaryConvert.convertBinaryToDecimal(""));
-   }
-   @Test
-   public void convertBinaryToOctal() {
-       assertEquals("1750",binaryConvert.convertBinaryToOctal("1111101000"));
-   }
-   @Test
-   public void convertBinaryToOctal1() {
-       assertEquals("202",binaryConvert.convertBinaryToOctal("10000010"));
-   }
-   @Test
-   public void convertBinaryToOctalEdgeCase() {
-       assertEquals("0",binaryConvert.convertBinaryToOctal(""));
-   }
+    public void convertBinaryToDecimal() {
+        assertEquals("130",binaryConvert.convertBinaryToDecimal("10000010"));
+    }
     @Test
-   public void convertBinaryToHexadecimal() {
-       assertEquals("64",binaryConvert.convertBinaryToHexadecimal("1100100"));
-   }
+    public void convertBinaryToDecimal1() {
+        assertEquals("1000",binaryConvert.convertBinaryToDecimal("1111101000"));
+    }
     @Test
-   public void convertHexaDecimalToBinary1() {
-       assertEquals("9a",binaryConvert.convertBinaryToHexadecimal("10011010"));
-   }
+    public void convertBinaryToDecimalEdgeCase() {
+        assertEquals("0",binaryConvert.convertBinaryToDecimal(""));
+    }
     @Test
-   public void convertHexaDecimalToBinaryEdgeCase() {
-       assertEquals("0",binaryConvert.convertBinaryToHexadecimal(""));
-   }
+    public void convertBinaryToOctal() {
+        assertEquals("1750",binaryConvert.convertBinaryToOctal("1111101000"));
+    }
+    @Test
+    public void convertBinaryToOctal1() {
+        assertEquals("202",binaryConvert.convertBinaryToOctal("10000010"));
+    }
+    @Test
+    public void convertBinaryToOctalEdgeCase() {
+        assertEquals("0",binaryConvert.convertBinaryToOctal(""));
+    }
+    @Test
+    public void convertBinaryToHexadecimal() {
+        assertEquals("64",binaryConvert.convertBinaryToHexadecimal("1100100"));
+    }
+    @Test
+    public void convertHexaDecimalToBinary1() {
+        assertEquals("9a",binaryConvert.convertBinaryToHexadecimal("10011010"));
+    }
+    @Test
+    public void convertHexaDecimalToBinaryEdgeCase() {
+        assertEquals("0",binaryConvert.convertBinaryToHexadecimal(""));
+    }
 }
