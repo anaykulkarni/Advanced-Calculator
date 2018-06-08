@@ -1854,7 +1854,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
     private void nFactorialButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nFactorialButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.arihtmeticModule.nFactorial(Integer.parseInt(input)));
+        String output = Long.toString(sc.arihtmeticModule.nFactorial(Integer.parseInt(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText(input + "! = " + output);
     }//GEN-LAST:event_nFactorialButtonMouseClicked
