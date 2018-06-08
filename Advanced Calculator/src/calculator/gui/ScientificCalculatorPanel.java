@@ -19,7 +19,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
     private static Boolean xyOperationClicked = false;
     private static Boolean yxOperationClicked = false;
     private static Boolean operationButtonClicked = false;
-    
+        
     //data variables
     private static Double xInput = 0.0;
     private static String expression="";
@@ -53,6 +53,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         sc.setUp();
         answerDisplay.setText("0");
         expressionDisplay.setText(expression);
+        degRadButton.setSelected(false);
     }
 
     /**
@@ -373,6 +374,11 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         backspaceButton.setBackground(new java.awt.Color(234, 236, 239));
         backspaceButton.setPreferredSize(new java.awt.Dimension(80, 80));
+        backspaceButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                backspaceButtonMousePressed(evt);
+            }
+        });
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -397,6 +403,11 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         clearButton.setBackground(new java.awt.Color(234, 236, 239));
         clearButton.setPreferredSize(new java.awt.Dimension(80, 80));
+        clearButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                clearButtonMousePressed(evt);
+            }
+        });
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -421,6 +432,11 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         clearAllButton.setBackground(new java.awt.Color(234, 236, 239));
         clearAllButton.setPreferredSize(new java.awt.Dimension(80, 80));
+        clearAllButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                clearAllButtonMousePressed(evt);
+            }
+        });
 
         jLabel22.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1714,56 +1730,88 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
     private void sinButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sinButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.trignometricModule.sineX(Double.parseDouble(input)));
+        String output;
+        if(degRadButton.isSelected())
+            output = Double.toString(sc.trignometricModule.sineX(Math.toRadians(Double.parseDouble(input))));
+        else
+            output = Double.toString(sc.trignometricModule.sineX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("sin(" + input + ") = " + output);
     }//GEN-LAST:event_sinButtonMouseClicked
 
     private void cosButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cosButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.trignometricModule.cosX(Double.parseDouble(input)));
+        String output;
+        if(degRadButton.isSelected())
+            output = Double.toString(sc.trignometricModule.cosX(Math.toRadians(Double.parseDouble(input))));
+        else
+            output = Double.toString(sc.trignometricModule.cosX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("cos(" + input + ") = " + output);
     }//GEN-LAST:event_cosButtonMouseClicked
 
     private void tanButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tanButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.trignometricModule.tanX(Double.parseDouble(input)));
+        String output;
+        if(degRadButton.isSelected())
+            output = Double.toString(sc.trignometricModule.tanX(Math.toRadians(Double.parseDouble(input))));
+        else
+            output = Double.toString(sc.trignometricModule.tanX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("tan(" + input + ") = " + output);
     }//GEN-LAST:event_tanButtonMouseClicked
 
     private void sinInverseButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sinInverseButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.trignometricModule.sineInverseX(Double.parseDouble(input)));
+        String output;
+        if(degRadButton.isSelected())
+            output = Double.toString(sc.trignometricModule.sineInverseX(Math.toRadians(Double.parseDouble(input))));
+        else
+            output = Double.toString(sc.trignometricModule.sineInverseX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("asin(" + input + ") = " + output);
     }//GEN-LAST:event_sinInverseButtonMouseClicked
 
     private void cosInverseButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cosInverseButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.trignometricModule.cosInverseX(Double.parseDouble(input)));
+        String output;
+        if(degRadButton.isSelected())
+            output = Double.toString(sc.trignometricModule.cosInverseX(Math.toRadians(Double.parseDouble(input))));
+        else
+            output = Double.toString(sc.trignometricModule.cosInverseX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("acos(" + input + ") = " + output);
     }//GEN-LAST:event_cosInverseButtonMouseClicked
 
     private void tanInverseButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tanInverseButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.trignometricModule.tanInverseX(Double.parseDouble(input)));
+        String output;
+        if(degRadButton.isSelected())
+            output = Double.toString(sc.trignometricModule.tanInverseX(Math.toRadians(Double.parseDouble(input))));
+        else
+            output = Double.toString(sc.trignometricModule.tanInverseX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("atan(" + input + ") = " + output);
     }//GEN-LAST:event_tanInverseButtonMouseClicked
 
     private void sinhButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sinhButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.trignometricModule.sinehX(Double.parseDouble(input)));
+        String output;
+        if(degRadButton.isSelected())
+            output = Double.toString(sc.trignometricModule.sinehX(Math.toRadians(Double.parseDouble(input))));
+        else
+            output = Double.toString(sc.trignometricModule.sinehX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("sinh(" + input + ") = " + output);
     }//GEN-LAST:event_sinhButtonMouseClicked
 
     private void coshButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coshButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.trignometricModule.coshX(Double.parseDouble(input)));
+        String output;
+        if(degRadButton.isSelected())
+            output = Double.toString(sc.trignometricModule.coshX(Math.toRadians(Double.parseDouble(input))));
+        else
+            output = Double.toString(sc.trignometricModule.coshX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("cosh(" + input + ") = " + output);
     }//GEN-LAST:event_coshButtonMouseClicked
@@ -2057,6 +2105,24 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         answerDisplay.setText(String.format("%.8f", Math.E));
     }//GEN-LAST:event_eButtonMouseClicked
 
+    private void backspaceButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backspaceButtonMousePressed
+        String input = answerDisplay.getText();
+        answerDisplay.setText(input.substring(0, input.length() - 1));
+    }//GEN-LAST:event_backspaceButtonMousePressed
+
+    private void clearButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMousePressed
+        answerDisplay.setText("0");
+    }//GEN-LAST:event_clearButtonMousePressed
+
+    private void clearAllButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearAllButtonMousePressed
+        xyOperationClicked = false;
+        yxOperationClicked = false;
+        operationButtonClicked = false;
+        xInput = 0.0;
+        expression="";
+        answerDisplay.setText("0");
+        expressionDisplay.setText(expression);
+    }//GEN-LAST:event_clearAllButtonMousePressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel answerDisplay;

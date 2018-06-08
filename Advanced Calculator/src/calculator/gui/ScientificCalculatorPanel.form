@@ -587,6 +587,9 @@
               <Dimension value="[80, 80]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="backspaceButtonMousePressed"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -632,6 +635,9 @@
               <Dimension value="[80, 80]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clearButtonMousePressed"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -677,6 +683,9 @@
               <Dimension value="[80, 80]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clearAllButtonMousePressed"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">
