@@ -9,17 +9,18 @@ import calculator.programmerCalculator.ProgrammerCalculator;
 import calculator.scientificcalculator.ScientificCalculator;
 
 /**
- *
- * @author kisho
+ * This class contains all the components of the Graphical 
+ * @version 1.0
+ * @author kishore
  */
-public class ProgrammerCalculatorPanal extends javax.swing.JPanel {
+public class ProgrammerCalculatorPanel extends javax.swing.JPanel {
     
     private static String outputResult = "0";
 
     private static ScientificCalculator scientificCalc = new ScientificCalculator();
     private static ProgrammerCalculator programmerCalc = new ProgrammerCalculator();
     
-    public ProgrammerCalculatorPanal() {
+    public ProgrammerCalculatorPanel() {
         initComponents();
          scientificCalc.setUp();
          programmerCalc.setUp();
