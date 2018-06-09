@@ -32,17 +32,27 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
             answerDisplay.setText(output);
             expressionDisplay.setText(xInput + " ^ " + yInput + " = " + output);
         }
-        xInput = Double.parseDouble(answerDisplay.getText());
+        else{
+            xInput = Double.parseDouble(answerDisplay.getText());
+            expressionDisplay.setText(xInput + " ^ ");
+            answerDisplay.setText("0");
+            xyOperationClicked = true;
+        }
     }
     
     private void yxHelper(){
-        if(xyOperationClicked){
+        if(yxOperationClicked){
             String yInput = answerDisplay.getText();
             String output = scientificCalculator.arihtmeticModule.yRootX( xInput, Double.parseDouble(yInput) );
             answerDisplay.setText(output);
             expressionDisplay.setText(xInput + " yroot " + yInput + " = " + output);
         }
-        xInput = Double.parseDouble(answerDisplay.getText());
+        else{
+            xInput = Double.parseDouble(answerDisplay.getText());
+            expressionDisplay.setText(xInput + " yroot ");
+            answerDisplay.setText("0");
+            yxOperationClicked = true;
+        }
     }
     
     /**
@@ -168,10 +178,12 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         header.setBackground(new java.awt.Color(255, 204, 204));
         header.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        header.setText("Scientific Calculator");
 
         specialPanel.setBackground(new java.awt.Color(226, 226, 226));
 
         degRadButton.setBackground(new java.awt.Color(220, 222, 226));
+        degRadButton.setText("Degrees");
         degRadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 degRadButtonActionPerformed(evt);
@@ -208,6 +220,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("<html>x<sup><small>2</small></sup></html>");
         jLabel1.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout x2ButtonLayout = new javax.swing.GroupLayout(x2Button);
@@ -237,6 +250,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("sin");
         jLabel14.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout sinButtonLayout = new javax.swing.GroupLayout(sinButton);
@@ -266,6 +280,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("cos");
         jLabel15.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout cosButtonLayout = new javax.swing.GroupLayout(cosButton);
@@ -295,6 +310,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("tan");
         jLabel16.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout tanButtonLayout = new javax.swing.GroupLayout(tanButton);
@@ -324,6 +340,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("<html>x<sup><small>y</small></sup></html>");
         jLabel17.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout xyButtonLayout = new javax.swing.GroupLayout(xyButton);
@@ -353,6 +370,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel19.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("<html>&#247;</html>");
         jLabel19.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout divideButtonLayout = new javax.swing.GroupLayout(divideButton);
@@ -382,6 +400,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("<html>&larr;</html>");
         jLabel20.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout backspaceButtonLayout = new javax.swing.GroupLayout(backspaceButton);
@@ -411,6 +430,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("C");
         jLabel21.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout clearButtonLayout = new javax.swing.GroupLayout(clearButton);
@@ -440,6 +460,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel22.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("AC");
         jLabel22.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout clearAllButtonLayout = new javax.swing.GroupLayout(clearAllButton);
@@ -469,6 +490,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("<html>x<sup><small>3</small></sup></html>");
         jLabel18.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout x3ButtonLayout = new javax.swing.GroupLayout(x3Button);
@@ -498,6 +520,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel23.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("<html><sup><small>y</small></sup>&radic;x</html>");
         jLabel23.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout yxButtonLayout = new javax.swing.GroupLayout(yxButton);
@@ -527,6 +550,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel24.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("<html>sin<sup><small>-1</small></sup></html>");
         jLabel24.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout sinInverseButtonLayout = new javax.swing.GroupLayout(sinInverseButton);
@@ -556,6 +580,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel25.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("<html>cos<sup><small>-1</small></sup></html>");
         jLabel25.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout cosInverseButtonLayout = new javax.swing.GroupLayout(cosInverseButton);
@@ -585,6 +610,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel26.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setText("<html>tan<sup><small>-1</small></sup></html>");
         jLabel26.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout tanInverseButtonLayout = new javax.swing.GroupLayout(tanInverseButton);
@@ -614,6 +640,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel27.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("7");
         jLabel27.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout sevenButtonLayout = new javax.swing.GroupLayout(sevenButton);
@@ -643,6 +670,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel28.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel28.setText("8");
         jLabel28.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout eightButtonLayout = new javax.swing.GroupLayout(eightButton);
@@ -672,6 +700,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel29.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("9");
         jLabel29.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout nineButtonLayout = new javax.swing.GroupLayout(nineButton);
@@ -701,6 +730,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel30.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setText("<html>&#215;</html>");
         jLabel30.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout multiplyButtonLayout = new javax.swing.GroupLayout(multiplyButton);
@@ -730,6 +760,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel31.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setText("sinh");
         jLabel31.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout sinhButtonLayout = new javax.swing.GroupLayout(sinhButton);
@@ -759,6 +790,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel32.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel32.setText("5");
         jLabel32.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout fiveButtonLayout = new javax.swing.GroupLayout(fiveButton);
@@ -788,6 +820,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel33.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel33.setText("6");
         jLabel33.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout sixButtonLayout = new javax.swing.GroupLayout(sixButton);
@@ -817,6 +850,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel34.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel34.setText("<html>10<sup>x</sup></html>");
         jLabel34.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout tenXButtonLayout = new javax.swing.GroupLayout(tenXButton);
@@ -846,6 +880,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel35.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setText("tanh");
         jLabel35.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout tanhButtonLayout = new javax.swing.GroupLayout(tanhButton);
@@ -875,6 +910,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel36.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel36.setText("cosh");
         jLabel36.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout coshButtonLayout = new javax.swing.GroupLayout(coshButton);
@@ -904,6 +940,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel37.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setText("4");
         jLabel37.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout fourButtonLayout = new javax.swing.GroupLayout(fourButton);
@@ -933,6 +970,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel38.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel38.setText("-");
         jLabel38.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout minusButtonLayout = new javax.swing.GroupLayout(minusButton);
@@ -962,6 +1000,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel39.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.setText("<html>&radic;</html>");
         jLabel39.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout rootButtonLayout = new javax.swing.GroupLayout(rootButton);
@@ -991,6 +1030,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel40.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel40.setText("1/x");
         jLabel40.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout inverseButtonLayout = new javax.swing.GroupLayout(inverseButton);
@@ -1020,6 +1060,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel41.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel41.setText("<html>e<sup><small>x</small></sup></html>");
         jLabel41.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout eXButtonLayout = new javax.swing.GroupLayout(eXButton);
@@ -1049,6 +1090,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel42.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel42.setText("ln");
         jLabel42.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout lnbuttonLayout = new javax.swing.GroupLayout(lnbutton);
@@ -1078,6 +1120,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel43.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel43.setText("log");
         jLabel43.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout logButtonLayout = new javax.swing.GroupLayout(logButton);
@@ -1107,6 +1150,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel44.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel44.setText("Mod");
         jLabel44.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout modButtonLayout = new javax.swing.GroupLayout(modButton);
@@ -1136,6 +1180,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel45.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel45.setText("1");
         jLabel45.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout oneButtonLayout = new javax.swing.GroupLayout(oneButton);
@@ -1165,6 +1210,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel46.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel46.setText("2");
         jLabel46.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout twoButtonLayout = new javax.swing.GroupLayout(twoButton);
@@ -1194,6 +1240,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel47.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.setText("3");
         jLabel47.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout threeButtonLayout = new javax.swing.GroupLayout(threeButton);
@@ -1223,6 +1270,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel48.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel48.setText("+");
         jLabel48.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout plusButtonLayout = new javax.swing.GroupLayout(plusButton);
@@ -1252,6 +1300,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel50.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel50.setText("<html>&pi;</html>");
         jLabel50.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout piButtonLayout = new javax.swing.GroupLayout(piButton);
@@ -1281,6 +1330,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel51.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel51.setText("n!");
         jLabel51.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout nFactorialButtonLayout = new javax.swing.GroupLayout(nFactorialButton);
@@ -1302,9 +1352,15 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         oBracketButton.setBackground(new java.awt.Color(234, 236, 239));
         oBracketButton.setPreferredSize(new java.awt.Dimension(80, 80));
+        oBracketButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                oBracketButtonMouseClicked(evt);
+            }
+        });
 
         jLabel52.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel52.setText("(");
         jLabel52.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout oBracketButtonLayout = new javax.swing.GroupLayout(oBracketButton);
@@ -1326,9 +1382,15 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         cBracketButton.setBackground(new java.awt.Color(234, 236, 239));
         cBracketButton.setPreferredSize(new java.awt.Dimension(80, 80));
+        cBracketButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cBracketButtonMouseClicked(evt);
+            }
+        });
 
         jLabel53.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel53.setText(")");
         jLabel53.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout cBracketButtonLayout = new javax.swing.GroupLayout(cBracketButton);
@@ -1358,6 +1420,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel54.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel54.setText("<html>&plusmn;</html>");
         jLabel54.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout negateButtonLayout = new javax.swing.GroupLayout(negateButton);
@@ -1387,6 +1450,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel55.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel55.setText("0");
         jLabel55.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout zeroButtonLayout = new javax.swing.GroupLayout(zeroButton);
@@ -1416,6 +1480,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel56.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel56.setText(".");
         jLabel56.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout dotButtonLayout = new javax.swing.GroupLayout(dotButton);
@@ -1445,6 +1510,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel57.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel57.setText("=");
         jLabel57.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout equalsButtonLayout = new javax.swing.GroupLayout(equalsButton);
@@ -1474,6 +1540,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
         jLabel58.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel58.setText("e");
         jLabel58.setPreferredSize(new java.awt.Dimension(50, 40));
 
         javax.swing.GroupLayout eButtonLayout = new javax.swing.GroupLayout(eButton);
@@ -1995,88 +2062,132 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
     private void dotButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dotButtonMouseClicked
         if("0".equals(answerDisplay.getText()))
             answerDisplay.setText("0.");
-        else
-            answerDisplay.setText( answerDisplay.getText() + ".");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText("0.");
+            else
+                answerDisplay.setText( answerDisplay.getText() + ".");
+        }
         operationButtonClicked = false;
     }//GEN-LAST:event_dotButtonMouseClicked
 
     private void sevenButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sevenButtonMouseClicked
         if("0".equals(answerDisplay.getText()))
             answerDisplay.setText("7");
-        else
-            answerDisplay.setText( answerDisplay.getText() + "7");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText("7");
+            else
+                answerDisplay.setText( answerDisplay.getText() + "7");
+        }
         operationButtonClicked = false;
     }//GEN-LAST:event_sevenButtonMouseClicked
 
     private void eightButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eightButtonMouseClicked
         if("0".equals(answerDisplay.getText()))
             answerDisplay.setText("8");
-        else
-            answerDisplay.setText( answerDisplay.getText() + "8");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText("8");
+            else
+                answerDisplay.setText( answerDisplay.getText() + "8");
+        }
         operationButtonClicked = false;
     }//GEN-LAST:event_eightButtonMouseClicked
 
     private void nineButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nineButtonMouseClicked
         if("0".equals(answerDisplay.getText()))
             answerDisplay.setText("9");
-        else
-            answerDisplay.setText( answerDisplay.getText() + "9");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText("9");
+            else
+                answerDisplay.setText( answerDisplay.getText() + "9");
+        }
         operationButtonClicked = false;
     }//GEN-LAST:event_nineButtonMouseClicked
 
     private void fourButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fourButtonMouseClicked
         if("0".equals(answerDisplay.getText()))
             answerDisplay.setText("4");
-        else
-            answerDisplay.setText( answerDisplay.getText() + "4");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText("4");
+            else
+                answerDisplay.setText( answerDisplay.getText() + "4");
+        }
         operationButtonClicked = false;
     }//GEN-LAST:event_fourButtonMouseClicked
 
     private void fiveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fiveButtonMouseClicked
         if("0".equals(answerDisplay.getText()))
             answerDisplay.setText("5");
-        else
-            answerDisplay.setText( answerDisplay.getText() + "5");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText("5");
+            else
+                answerDisplay.setText( answerDisplay.getText() + "5");
+        }
         operationButtonClicked = false;
     }//GEN-LAST:event_fiveButtonMouseClicked
 
     private void sixButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sixButtonMouseClicked
         if("0".equals(answerDisplay.getText()))
             answerDisplay.setText("6");
-        else
-            answerDisplay.setText( answerDisplay.getText() + "6");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText("6");
+            else
+                answerDisplay.setText( answerDisplay.getText() + "6");
+        }
         operationButtonClicked = false;
     }//GEN-LAST:event_sixButtonMouseClicked
 
     private void oneButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oneButtonMouseClicked
         if("0".equals(answerDisplay.getText()))
             answerDisplay.setText("1");
-        else
-            answerDisplay.setText( answerDisplay.getText() + "1");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText("1");
+            else
+                answerDisplay.setText( answerDisplay.getText() + "1");
+        }
         operationButtonClicked = false;
     }//GEN-LAST:event_oneButtonMouseClicked
 
     private void twoButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_twoButtonMouseClicked
         if("0".equals(answerDisplay.getText()))
             answerDisplay.setText("2");
-        else
-            answerDisplay.setText( answerDisplay.getText() + "2");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText("2");
+            else
+                answerDisplay.setText( answerDisplay.getText() + "2");
+        }
         operationButtonClicked = false;
     }//GEN-LAST:event_twoButtonMouseClicked
 
     private void threeButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_threeButtonMouseClicked
         if("0".equals(answerDisplay.getText()))
             answerDisplay.setText("3");
-        else
-            answerDisplay.setText( answerDisplay.getText() + "3");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText("3");
+            else
+                answerDisplay.setText( answerDisplay.getText() + "3");
+        }
         operationButtonClicked = false;
     }//GEN-LAST:event_threeButtonMouseClicked
 
     private void zeroButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_zeroButtonMouseClicked
         if("0".equals(answerDisplay.getText()))
             answerDisplay.setText("0");
-        else
-            answerDisplay.setText( answerDisplay.getText() + "0");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText("0");
+            else
+                answerDisplay.setText( answerDisplay.getText() + "0");
+        }
         operationButtonClicked = false;
     }//GEN-LAST:event_zeroButtonMouseClicked
 
@@ -2124,6 +2235,30 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         answerDisplay.setText("0");
         expressionDisplay.setText(expression);
     }//GEN-LAST:event_clearAllButtonMousePressed
+
+    private void oBracketButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oBracketButtonMouseClicked
+        if("0".equals(answerDisplay.getText()))
+            answerDisplay.setText("(");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText("(");
+            else
+                answerDisplay.setText( answerDisplay.getText() + "(");
+        }
+        operationButtonClicked = false;
+    }//GEN-LAST:event_oBracketButtonMouseClicked
+
+    private void cBracketButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cBracketButtonMouseClicked
+        if("0".equals(answerDisplay.getText()))
+            answerDisplay.setText(")");
+        else{
+            if(operationButtonClicked)
+                answerDisplay.setText(")");
+            else
+                answerDisplay.setText( answerDisplay.getText() + ")");
+        }
+        operationButtonClicked = false;
+    }//GEN-LAST:event_cBracketButtonMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel answerDisplay;
