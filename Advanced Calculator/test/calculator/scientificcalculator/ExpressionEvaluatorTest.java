@@ -13,8 +13,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author Anay
+ * JUnit Test class for the class ExpressionEvaluatorModuleTest
+ * 
+ * @version     1.0
+ * @author      Anay Kulkarni
  */
 public class ExpressionEvaluatorTest {
     ExpressionEvaluatorModule evaluator;

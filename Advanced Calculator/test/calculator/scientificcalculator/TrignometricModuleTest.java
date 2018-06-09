@@ -5,7 +5,6 @@
  */
 package calculator.scientificcalculator;
 
-import calculator.scientificcalculator.TrignometricModule;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

@@ -13,7 +13,7 @@ import calculator.scientificcalculator.ScientificCalculator;
  */
 public class ScientificCalculatorPanel extends javax.swing.JPanel {
     //custom members.
-    private static ScientificCalculator sc = new ScientificCalculator();
+    private static ScientificCalculator scientificCalculator = new ScientificCalculator();
     
     //control variables.
     private static Boolean xyOperationClicked = false;
@@ -28,7 +28,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
     private void xyHelper(){
         if(xyOperationClicked){
             String yInput = answerDisplay.getText();
-            String output = Double.toString(sc.arihtmeticModule.xPowerY(xInput, Double.parseDouble(yInput)));
+            String output = Double.toString(scientificCalculator.arihtmeticModule.xPowerY(xInput, Double.parseDouble(yInput)));
             answerDisplay.setText(output);
             expressionDisplay.setText(xInput + " ^ " + yInput + " = " + output);
         }
@@ -38,7 +38,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
     private void yxHelper(){
         if(xyOperationClicked){
             String yInput = answerDisplay.getText();
-            String output = sc.arihtmeticModule.yRootX( xInput, Double.parseDouble(yInput) );
+            String output = scientificCalculator.arihtmeticModule.yRootX( xInput, Double.parseDouble(yInput) );
             answerDisplay.setText(output);
             expressionDisplay.setText(xInput + " yroot " + yInput + " = " + output);
         }
@@ -50,7 +50,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
      */
     public ScientificCalculatorPanel() {
         initComponents();
-        sc.setUp();
+        scientificCalculator.setUp();
         answerDisplay.setText("0");
         expressionDisplay.setText(expression);
         degRadButton.setSelected(false);
@@ -1719,7 +1719,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
     private void x2ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_x2ButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.arihtmeticModule.xSquare(Double.parseDouble(input)));
+        String output = Double.toString(scientificCalculator.arihtmeticModule.xSquare(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText(input + " ^ 2 = " + output);
     }//GEN-LAST:event_x2ButtonMouseClicked
@@ -1732,9 +1732,9 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         String input = answerDisplay.getText();
         String output;
         if(degRadButton.isSelected())
-            output = Double.toString(sc.trignometricModule.sineX(Math.toRadians(Double.parseDouble(input))));
+            output = Double.toString(scientificCalculator.trignometricModule.sineX(Math.toRadians(Double.parseDouble(input))));
         else
-            output = Double.toString(sc.trignometricModule.sineX(Double.parseDouble(input)));
+            output = Double.toString(scientificCalculator.trignometricModule.sineX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("sin(" + input + ") = " + output);
     }//GEN-LAST:event_sinButtonMouseClicked
@@ -1743,9 +1743,9 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         String input = answerDisplay.getText();
         String output;
         if(degRadButton.isSelected())
-            output = Double.toString(sc.trignometricModule.cosX(Math.toRadians(Double.parseDouble(input))));
+            output = Double.toString(scientificCalculator.trignometricModule.cosX(Math.toRadians(Double.parseDouble(input))));
         else
-            output = Double.toString(sc.trignometricModule.cosX(Double.parseDouble(input)));
+            output = Double.toString(scientificCalculator.trignometricModule.cosX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("cos(" + input + ") = " + output);
     }//GEN-LAST:event_cosButtonMouseClicked
@@ -1754,9 +1754,9 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         String input = answerDisplay.getText();
         String output;
         if(degRadButton.isSelected())
-            output = Double.toString(sc.trignometricModule.tanX(Math.toRadians(Double.parseDouble(input))));
+            output = Double.toString(scientificCalculator.trignometricModule.tanX(Math.toRadians(Double.parseDouble(input))));
         else
-            output = Double.toString(sc.trignometricModule.tanX(Double.parseDouble(input)));
+            output = Double.toString(scientificCalculator.trignometricModule.tanX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("tan(" + input + ") = " + output);
     }//GEN-LAST:event_tanButtonMouseClicked
@@ -1765,9 +1765,9 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         String input = answerDisplay.getText();
         String output;
         if(degRadButton.isSelected())
-            output = Double.toString(sc.trignometricModule.sineInverseX(Math.toRadians(Double.parseDouble(input))));
+            output = Double.toString(scientificCalculator.trignometricModule.sineInverseX(Math.toRadians(Double.parseDouble(input))));
         else
-            output = Double.toString(sc.trignometricModule.sineInverseX(Double.parseDouble(input)));
+            output = Double.toString(scientificCalculator.trignometricModule.sineInverseX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("asin(" + input + ") = " + output);
     }//GEN-LAST:event_sinInverseButtonMouseClicked
@@ -1776,9 +1776,9 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         String input = answerDisplay.getText();
         String output;
         if(degRadButton.isSelected())
-            output = Double.toString(sc.trignometricModule.cosInverseX(Math.toRadians(Double.parseDouble(input))));
+            output = Double.toString(scientificCalculator.trignometricModule.cosInverseX(Math.toRadians(Double.parseDouble(input))));
         else
-            output = Double.toString(sc.trignometricModule.cosInverseX(Double.parseDouble(input)));
+            output = Double.toString(scientificCalculator.trignometricModule.cosInverseX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("acos(" + input + ") = " + output);
     }//GEN-LAST:event_cosInverseButtonMouseClicked
@@ -1787,9 +1787,9 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         String input = answerDisplay.getText();
         String output;
         if(degRadButton.isSelected())
-            output = Double.toString(sc.trignometricModule.tanInverseX(Math.toRadians(Double.parseDouble(input))));
+            output = Double.toString(scientificCalculator.trignometricModule.tanInverseX(Math.toRadians(Double.parseDouble(input))));
         else
-            output = Double.toString(sc.trignometricModule.tanInverseX(Double.parseDouble(input)));
+            output = Double.toString(scientificCalculator.trignometricModule.tanInverseX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("atan(" + input + ") = " + output);
     }//GEN-LAST:event_tanInverseButtonMouseClicked
@@ -1798,9 +1798,9 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         String input = answerDisplay.getText();
         String output;
         if(degRadButton.isSelected())
-            output = Double.toString(sc.trignometricModule.sinehX(Math.toRadians(Double.parseDouble(input))));
+            output = Double.toString(scientificCalculator.trignometricModule.sinehX(Math.toRadians(Double.parseDouble(input))));
         else
-            output = Double.toString(sc.trignometricModule.sinehX(Double.parseDouble(input)));
+            output = Double.toString(scientificCalculator.trignometricModule.sinehX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("sinh(" + input + ") = " + output);
     }//GEN-LAST:event_sinhButtonMouseClicked
@@ -1809,16 +1809,16 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         String input = answerDisplay.getText();
         String output;
         if(degRadButton.isSelected())
-            output = Double.toString(sc.trignometricModule.coshX(Math.toRadians(Double.parseDouble(input))));
+            output = Double.toString(scientificCalculator.trignometricModule.coshX(Math.toRadians(Double.parseDouble(input))));
         else
-            output = Double.toString(sc.trignometricModule.coshX(Double.parseDouble(input)));
+            output = Double.toString(scientificCalculator.trignometricModule.coshX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("cosh(" + input + ") = " + output);
     }//GEN-LAST:event_coshButtonMouseClicked
 
     private void x3ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_x3ButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.arihtmeticModule.xCube(Double.parseDouble(input)));
+        String output = Double.toString(scientificCalculator.arihtmeticModule.xCube(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText(input + " ^ 3 = " + output);
     }//GEN-LAST:event_x3ButtonMouseClicked
@@ -1829,21 +1829,21 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
     private void tenXButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tenXButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.exponentialAndLogarithmicModule.tenPowerX(Integer.parseInt(input)));
+        String output = Double.toString(scientificCalculator.exponentialAndLogarithmicModule.tenPowerX(Integer.parseInt(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("10" + " ^ " +input+" = " + output);
     }//GEN-LAST:event_tenXButtonMouseClicked
 
     private void eXButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eXButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.exponentialAndLogarithmicModule.ePowerX(Double.parseDouble(input)));
+        String output = Double.toString(scientificCalculator.exponentialAndLogarithmicModule.ePowerX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("e" + " ^ " +input+" = " + output);
     }//GEN-LAST:event_eXButtonMouseClicked
 
     private void inverseButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inverseButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.arihtmeticModule.xInverse(Double.parseDouble(input)));
+        String output = Double.toString(scientificCalculator.arihtmeticModule.xInverse(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("1/" + input + " = " + output);
     }//GEN-LAST:event_inverseButtonMouseClicked
@@ -1854,14 +1854,14 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
     private void nFactorialButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nFactorialButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Long.toString(sc.arihtmeticModule.nFactorial(Integer.parseInt(input)));
+        String output = Long.toString(scientificCalculator.arihtmeticModule.nFactorial(Integer.parseInt(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText(input + "! = " + output);
     }//GEN-LAST:event_nFactorialButtonMouseClicked
 
     private void rootButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rootButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.arihtmeticModule.squareRoot(Double.parseDouble(input)));
+        String output = Double.toString(scientificCalculator.arihtmeticModule.squareRoot(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("sq.root(" + input + ") = " + output);
     }//GEN-LAST:event_rootButtonMouseClicked
@@ -1890,28 +1890,28 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
     private void logButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.exponentialAndLogarithmicModule.logX(Double.parseDouble(input)));
+        String output = Double.toString(scientificCalculator.exponentialAndLogarithmicModule.logX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("log(" + input +") = " + output);
     }//GEN-LAST:event_logButtonMouseClicked
 
     private void tanhButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tanhButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.trignometricModule.tanhX(Double.parseDouble(input)));
+        String output = Double.toString(scientificCalculator.trignometricModule.tanhX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("tanh(" + input + ") = " + output);
     }//GEN-LAST:event_tanhButtonMouseClicked
 
     private void lnbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnbuttonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.exponentialAndLogarithmicModule.lnX(Double.parseDouble(input)));
+        String output = Double.toString(scientificCalculator.exponentialAndLogarithmicModule.lnX(Double.parseDouble(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("ln(" + input +") = " + output);
     }//GEN-LAST:event_lnbuttonMouseClicked
 
     private void negateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_negateButtonMouseClicked
         String input = answerDisplay.getText();
-        String output = Double.toString(sc.arihtmeticModule.negate(Integer.parseInt(input)));
+        String output = Double.toString(scientificCalculator.arihtmeticModule.negate(Integer.parseInt(input)));
         answerDisplay.setText(output);
         expressionDisplay.setText("negation(" + input +") = " + output);
     }//GEN-LAST:event_negateButtonMouseClicked
@@ -2096,7 +2096,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
             return;
         }
         expression += answerDisplay.getText();
-        String output = sc.evaluator.evaluate(expression);
+        String output = scientificCalculator.evaluator.evaluate(expression);
         answerDisplay.setText(output);
         expressionDisplay.setText(expression + " = " + output);
     }//GEN-LAST:event_equalsButtonMouseClicked
@@ -2107,7 +2107,8 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
 
     private void backspaceButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backspaceButtonMousePressed
         String input = answerDisplay.getText();
-        answerDisplay.setText(input.substring(0, input.length() - 1));
+        if(input.length() > 0)
+            answerDisplay.setText(input.substring(0, input.length() - 1));
     }//GEN-LAST:event_backspaceButtonMousePressed
 
     private void clearButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMousePressed

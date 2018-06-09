@@ -5,7 +5,6 @@
  */
 package calculator.scientificcalculator;
 
-import calculator.scientificcalculator.ExponentiationAndLogarithmicModule;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,8 +13,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author Anay
+ * JUnit Test class for the class ExponentiationAndLogarithmicModuleTest
+ * 
+ * @version     1.0
+ * @author      Anay Kulkarni
  */
 public class ExponentiationAndLogarithmicModuleTest {
     
