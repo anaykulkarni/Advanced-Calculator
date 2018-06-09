@@ -31,7 +31,8 @@ public class ExpressionEvaluatorModule {
         try{
             result = jsEngine.eval(expression).toString();
         }catch(ScriptException ex){
-            ex.printStackTrace();
+            //ex.printStackTrace();
+            result = "Error";
         }
         return result;
     }

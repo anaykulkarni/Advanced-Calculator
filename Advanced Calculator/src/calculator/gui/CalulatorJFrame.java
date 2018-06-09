@@ -6,10 +6,6 @@
 package calculator.gui;
 
 import java.awt.Color;
-import java.awt.Image;
-import java.awt.Toolkit;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -24,14 +20,28 @@ public class CalulatorJFrame extends javax.swing.JFrame {
     
     public CalulatorJFrame() {
         initComponents();
-        
-        //scaleImageAndSet(jLabel1, "images\\Xbox X_25px.png");
-        
+              
         //Initialize side pane buttons
         {
             setColor(btn_1);
             ind_1.setOpaque(true);
             resetColor(new JPanel[]{btn_2, btn_3}, new JPanel[]{ind_2, ind_3});
+        }
+        
+        //Intialize JPanels
+        {
+            try{
+                mainPanel.removeAll();
+                mainPanel.repaint();
+                mainPanel.revalidate();
+
+                //adding Panel
+                //mainPanel.add();
+                mainPanel.repaint();
+                mainPanel.revalidate();
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
         }
     }
 
@@ -300,24 +310,65 @@ public class CalulatorJFrame extends javax.swing.JFrame {
         setColor(btn_1);
         ind_1.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_3}, new JPanel[]{ind_2, ind_3});
+        
+        //switching Panels.
+        try{
+                mainPanel.removeAll();
+                mainPanel.repaint();
+                mainPanel.revalidate();
+
+                //adding Panel
+                //mainPanel.add();
+                mainPanel.repaint();
+                mainPanel.revalidate();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_btn_1MouseReleased
 
     private void btn_2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseReleased
         setColor(btn_2);
         ind_2.setOpaque(true);
         resetColor(new JPanel[]{btn_1, btn_3}, new JPanel[]{ind_1, ind_3});
+        
+        //switching Panels.
+        try{
+                mainPanel.removeAll();
+                mainPanel.repaint();
+                mainPanel.revalidate();
+
+                //adding Panel
+                //mainPanel.add();
+                mainPanel.repaint();
+                mainPanel.revalidate();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_btn_2MouseReleased
 
     private void btn_3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MouseReleased
         setColor(btn_3);
         ind_3.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_1}, new JPanel[]{ind_1, ind_2});
+        
+        //switching Panels.
+        try{
+                mainPanel.removeAll();
+                mainPanel.repaint();
+                mainPanel.revalidate();
+
+                //adding Panel
+                //mainPanel.add();
+                mainPanel.repaint();
+                mainPanel.revalidate();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_btn_3MouseReleased
 
     private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_formMouseDragged
 
@@ -363,14 +414,6 @@ public class CalulatorJFrame extends javax.swing.JFrame {
     }
     
     //custom methods
-    private void scaleImageAndSet(JLabel label, String path){
-        ImageIcon ic = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource(path)));
-        Image i1 = ic.getImage();
-        Image i2 = i1.getScaledInstance(25, 25, Image.SCALE_SMOOTH);
-        ImageIcon i = new ImageIcon(i2);
-        label.setIcon(i);        
-    }
-    
     private void setColor(JPanel pane){
         pane.setBackground(new Color(153,204,255));
     }
@@ -378,11 +421,10 @@ public class CalulatorJFrame extends javax.swing.JFrame {
     private void resetColor(JPanel [] pane, JPanel [] indicators){
         for(int i=0;i<pane.length;i++){
            pane[i].setBackground(new Color(0,153,255));
-           
-        } for(int i=0;i<indicators.length;i++){
+        }
+        for(int i=0;i<indicators.length;i++){
            indicators[i].setOpaque(false);           
         }
-        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
