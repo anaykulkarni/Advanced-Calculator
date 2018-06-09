@@ -14,23 +14,50 @@ package calculator.programmerscalculator;
 public class BitwiseOperationsModule {
     /**
      * The method performs "And" operation on the given inputs.
-     * 
-     * @param firstValue
-     * @param secondValue
-     * @return 
+     * And return a Long integer as output.
+     * @param firstValue first user input.
+     * @param secondValue second user input.
+     * @return the result of the bitwise operation "firstValue And SecondValue".
      */
     public long andOperation(int firstValue,int secondValue) {
         return(firstValue & secondValue);
     }
+    /**
+     * The method performs "Or" operation on the given inputs.
+     * And return a Long integer as output.
+     * @param firstValue first user input.
+     * @param secondValue second user input.
+     * @return the result of the bitwise operation "firstValue Or SecondValue".
+     */
     public long orOperation(int firstValue,int secondValue) {
         return(firstValue | secondValue);
     }
+    /**
+     * The method performs "Not" operation on the given inputs.
+     * And return a Long integer as output.
+     * @param inputValue user input.
+     * @return the result of the bitwise operation "<b>~inputValue</b>".
+     */
     public long notOperation(int inputValue) {
         return(~inputValue);
     }
+    /**
+     * The method performs "<b>Xor</b>" operation on the given inputs.
+     * And return a Long integer as output.
+     * @param firstValue first user input.
+     * @param secondValue second user input.
+     * @return the result of the bitwise operation "<b>firstValue Xor SecondValue</b>".
+     */
     public long xorOperation(int firstValue,int secondValue) {
         return(firstValue ^ secondValue);
     }
+     /**
+     * The method performs "<b>leftShift</b>" operation on the given inputs.
+     * And return a Long integer as output.
+     * @param firstValue first user input.
+     * @param secondValue second user input.
+     * @return the result of the bitwise operation "<b>firstValue Xor SecondValue</b>".
+     */
     public long leftShiftOperation(int valueToBeShifted,int numberOfTime) {
         return(valueToBeShifted << numberOfTime);
     }
