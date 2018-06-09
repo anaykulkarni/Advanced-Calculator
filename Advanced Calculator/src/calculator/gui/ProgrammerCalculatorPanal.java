@@ -969,6 +969,11 @@ public class ProgrammerCalculatorPanal extends javax.swing.JPanel {
 
         clearButton.setBackground(new java.awt.Color(234, 236, 239));
         clearButton.setPreferredSize(new java.awt.Dimension(80, 80));
+        clearButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clearButtonMouseClicked(evt);
+            }
+        });
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -994,6 +999,11 @@ public class ProgrammerCalculatorPanal extends javax.swing.JPanel {
 
         clearAllButton.setBackground(new java.awt.Color(234, 236, 239));
         clearAllButton.setPreferredSize(new java.awt.Dimension(80, 80));
+        clearAllButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clearAllButtonMouseClicked(evt);
+            }
+        });
 
         jLabel22.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1382,6 +1392,23 @@ public class ProgrammerCalculatorPanal extends javax.swing.JPanel {
             calculatorDisplay.setText(back.toString());
         }
     }//GEN-LAST:event_backspaceButtonMouseClicked
+
+    private void clearAllButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearAllButtonMouseClicked
+        scientificCalc.setUp();
+        programmerCalc.setUp();
+        calculatorDisplay.setText("0");
+        binaryOutput.setText("0");
+        hexadecimalOutput.setText("0");
+        octalOutput.setText("0");
+    }//GEN-LAST:event_clearAllButtonMouseClicked
+
+    private void clearButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseClicked
+        calculatorDisplay.setText("0");
+        binaryOutput.setText("0");
+        hexadecimalOutput.setText("0");
+        octalOutput.setText("0");
+        outputResult="0";
+    }//GEN-LAST:event_clearButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
