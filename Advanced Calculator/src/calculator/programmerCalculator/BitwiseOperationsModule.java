@@ -11,28 +11,28 @@ package calculator.programmerCalculator;
  */
 public class BitwiseOperationsModule {
     
-    long andOperation(int firstValue,int secondValue) {
+    public long andOperation(int firstValue,int secondValue) {
         return(firstValue & secondValue);
     }
-    long orOperation(int firstValue,int secondValue) {
+    public long orOperation(int firstValue,int secondValue) {
         return(firstValue | secondValue);
     }
-    long notOperation(int inputValue) {
+    public long notOperation(int inputValue) {
         return(~inputValue);
     }
-    long xorOperation(int firstValue,int secondValue) {
+    public long xorOperation(int firstValue,int secondValue) {
         return(firstValue ^ secondValue);
     }
-    long leftShiftOperation(int valueToBeShifted,int numberOfTime) {
+    public long leftShiftOperation(int valueToBeShifted,int numberOfTime) {
         return(valueToBeShifted << numberOfTime);
     }
-    long rightShiftOperation(int valueToBeShifted,int numberOfTime) {
+    public long rightShiftOperation(int valueToBeShifted,int numberOfTime) {
         return(valueToBeShifted >> numberOfTime);
     }
-    long leftRotateOperation(int valueToBeShifted) {
+    public long leftRotateOperation(int valueToBeShifted) {
         return(Integer.rotateLeft(valueToBeShifted, 1));
     }
-    long rightRotateOperation(int valueToBeShifted) {
+    public long rightRotateOperation(int valueToBeShifted) {
         return(Integer.rotateRight(valueToBeShifted, 1));
     }
 }
