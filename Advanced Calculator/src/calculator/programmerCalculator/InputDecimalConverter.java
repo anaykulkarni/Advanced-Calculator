@@ -11,7 +11,7 @@ package calculator.programmerCalculator;
  */
 public class InputDecimalConverter {
     
-    String convertDecimalToBinary(String inputDecimal) {
+    public String convertDecimalToBinary(String inputDecimal) {
         if("".equals(inputDecimal))
             return "0";
         else {
@@ -19,7 +19,7 @@ public class InputDecimalConverter {
             return (Integer.toBinaryString(decimalConversion));
         }
     }
-    String convertDecimalToHexaDecimal(String inputDecimal) {
+    public  String convertDecimalToHexaDecimal(String inputDecimal) {
         if("".equals(inputDecimal))
             return "0";
         else {
@@ -27,7 +27,7 @@ public class InputDecimalConverter {
             return (Integer.toHexString(decimalConversion));
         }
     }
-    String convertDecimalToOctal(String inputDecimal) {
+    public String convertDecimalToOctal(String inputDecimal) {
         if("".equals(inputDecimal))
             return "0";
         else {
