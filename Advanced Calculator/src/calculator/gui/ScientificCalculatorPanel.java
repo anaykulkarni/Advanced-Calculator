@@ -169,7 +169,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         header.setBackground(new java.awt.Color(255, 204, 204));
         header.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
 
-        specialPanel.setBackground(new java.awt.Color(220, 222, 226));
+        specialPanel.setBackground(new java.awt.Color(226, 226, 226));
 
         degRadButton.setBackground(new java.awt.Color(220, 222, 226));
         degRadButton.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +195,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        buttonsPanel.setBackground(new java.awt.Color(220, 222, 226));
+        buttonsPanel.setBackground(new java.awt.Color(226, 226, 226));
         buttonsPanel.setMaximumSize(new java.awt.Dimension(80, 80));
 
         x2Button.setBackground(new java.awt.Color(234, 236, 239));

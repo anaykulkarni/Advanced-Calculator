@@ -62,7 +62,7 @@
     <Container class="javax.swing.JPanel" name="specialPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="e2" green="de" red="dc" type="rgb"/>
+          <Color blue="e2" green="e2" red="e2" type="rgb"/>
         </Property>
       </Properties>
 
@@ -103,7 +103,7 @@
     <Container class="javax.swing.JPanel" name="buttonsPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="e2" green="de" red="dc" type="rgb"/>
+          <Color blue="e2" green="e2" red="e2" type="rgb"/>
         </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[80, 80]"/>
