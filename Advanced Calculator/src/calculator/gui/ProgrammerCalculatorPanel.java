@@ -5,21 +5,25 @@
  */
 package calculator.gui;
 
-import calculator.programmerCalculator.ProgrammerCalculator;
+import calculator.programmerscalculator.ProgrammerCalculator;
 import calculator.scientificcalculator.ScientificCalculator;
 
 /**
- * This class contains all the components of the Graphical 
+ * This class contains all the components of the Graphical user interface.
+ * It takes of rendering of the UI and has method that manipulate user data 
+ * and gives out the expected result.
  * @version 1.0
  * @author kishore
  */
 public class ProgrammerCalculatorPanel extends javax.swing.JPanel {
-    
+    //varible to display output on screen.
     private static String outputResult = "0";
-
+    //custom members.
     private static ScientificCalculator scientificCalc = new ScientificCalculator();
     private static ProgrammerCalculator programmerCalc = new ProgrammerCalculator();
-    
+     /**
+     * Creates new form ProgrammerCalculatorPanal.
+     */
     public ProgrammerCalculatorPanel() {
         initComponents();
          scientificCalc.setUp();
@@ -1226,7 +1230,7 @@ public class ProgrammerCalculatorPanel extends javax.swing.JPanel {
                 .addComponent(buttonsPanal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    //Custom methods.
     private void fiveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fiveButtonMouseClicked
         if("0".equals(calculatorDisplay.getText()))
         calculatorDisplay.setText("5");
