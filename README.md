@@ -21,4 +21,13 @@ The advanced calculator application consists of three functional units,
   
   _**NOTE**: All arithmetic operations, except yth root of x, are computed extensively using the java.lang.Math class methods. Hence the Capabilities are limited to the those provided by that class. Only the yth root of x method is custom coded and works for all possible cases. The special cases have been mentioned in the java documentation. Complicated Expressions involving trigonometric, exponential, logarithmic and arithmetic computations combinedly cannot be evaluated._  
   
+  #### The Programmer calculator -
+  -It can perform basic arithmetic operation and some bitwise operations such as "1 or 2", " not 2 ",etc.
   
+  _**NOTE** : After a operation is select the display becomes blank, please enter second value then and hit "=". No result will be show if "=" is not hit._
+  
+  - For Operations involing two input, like or, and , xor ,rsh , etc. please give the first input ,then hit on the operation to be performed ,then give second input and hit Equal to Button"=" for results.
+  
+  - For Operations involving one input, like not ,RoR ,RoL .First give the input, then select the operation to be performed and then hit equal to button ( = ).Else no result will be shown.
+  
+ - To Convert a decimal number into other base value systems. just enter the number and press Equal to sign ( = ).
