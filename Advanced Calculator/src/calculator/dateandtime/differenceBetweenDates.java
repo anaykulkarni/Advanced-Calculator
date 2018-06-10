@@ -11,9 +11,15 @@ import java.util.Date;
 
 /**
  *
- * @author 
+ * @author kartik Kulkarni
  */
 public class differenceBetweenDates {
+    /**
+     * This class class contains the method to take input as two dates and finds the difference between two dates
+     * @param initialDate this takes initial date as input
+     * @param finalDate this takes 2nd date as input 
+     * @return this parameter returns the difference between two dates 
+     */
 
     public int differencebetweendate(String initialDate,String finalDate) {
         Date date_1;
