@@ -17,7 +17,8 @@ import calculator.scientificcalculator.ScientificCalculator;
  */
 public class ProgrammerCalculatorPanel extends javax.swing.JPanel {
     //varible to display output on screen.
-    private static String outputResult = "0";
+    private static String choice = "0";
+    private static int input1;
     //custom members.
     private static ScientificCalculator scientificCalc = new ScientificCalculator();
     private static ProgrammerCalculator programmerCalc = new ProgrammerCalculator();
@@ -889,6 +890,11 @@ public class ProgrammerCalculatorPanel extends javax.swing.JPanel {
 
         rolButton.setBackground(new java.awt.Color(234, 236, 239));
         rolButton.setPreferredSize(new java.awt.Dimension(80, 80));
+        rolButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rolButtonMouseClicked(evt);
+            }
+        });
 
         jLabel52.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1232,160 +1238,232 @@ public class ProgrammerCalculatorPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     //Custom methods.
     private void fiveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fiveButtonMouseClicked
-        if("0".equals(calculatorDisplay.getText()))
+        if("0".equals(calculatorDisplay.getText()) || "".equals(calculatorDisplay.getText()))
         calculatorDisplay.setText("5");
         else
         calculatorDisplay.setText( calculatorDisplay.getText() + "5");
     }//GEN-LAST:event_fiveButtonMouseClicked
 
     private void rorButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rorButtonMouseClicked
-        String input = calculatorDisplay.getText();
-        outputResult = Long.toString(programmerCalc.bitwiseOperation.rightRotateOperation(Integer.parseInt(input)));  
+        choice = "ror";
     }//GEN-LAST:event_rorButtonMouseClicked
 
     private void zeroButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_zeroButtonMouseClicked
-        if("0".equals(calculatorDisplay.getText()))
+        if("0".equals(calculatorDisplay.getText()) || "".equals(calculatorDisplay.getText()))
         calculatorDisplay.setText("0");
         else
         calculatorDisplay.setText( calculatorDisplay.getText() + "0");
     }//GEN-LAST:event_zeroButtonMouseClicked
 
     private void sixButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sixButtonMouseClicked
-        if("0".equals(calculatorDisplay.getText()))
+        if("0".equals(calculatorDisplay.getText()) || "".equals(calculatorDisplay.getText()))
         calculatorDisplay.setText("6");
         else
         calculatorDisplay.setText( calculatorDisplay.getText() + "6");
     }//GEN-LAST:event_sixButtonMouseClicked
 
     private void modButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modButtonMouseClicked
-        int input1 = Integer.parseInt(calculatorDisplay.getText());
-        int input2 = Integer.parseInt(calculatorDisplay.getText());
-        outputResult = Integer.toString(input1 % input2);
+        input1 = Integer.parseInt(calculatorDisplay.getText());
+        calculatorDisplay.setText("");
+        choice = "mod";
     }//GEN-LAST:event_modButtonMouseClicked
 
     private void negateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_negateButtonMouseClicked
-        String input = calculatorDisplay.getText();
-        int output = (int) scientificCalc.arihtmeticModule.negate(Integer.parseInt(input));
-        outputResult = Integer.toString(output);   
+        input1 = Integer.parseInt(calculatorDisplay.getText());
+        choice = "negate";
     }//GEN-LAST:event_negateButtonMouseClicked
 
     private void oneButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oneButtonMouseClicked
-        if("0".equals(calculatorDisplay.getText()))
+        if("0".equals(calculatorDisplay.getText()) || "".equals(calculatorDisplay.getText()))
         calculatorDisplay.setText("1");
         else
         calculatorDisplay.setText( calculatorDisplay.getText() + "1");
     }//GEN-LAST:event_oneButtonMouseClicked
 
     private void equalsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_equalsButtonMouseClicked
+        String outputResult;
+        switch(choice) {
+            case "mod" : { 
+                int input2 = Integer.parseInt(calculatorDisplay.getText());
+                outputResult = Integer.toString(input1 % input2);
+                break;
+            }
+            case "negate" : {
+                int output = (int)scientificCalc.arihtmeticModule.negate(input1);
+                outputResult = Integer.toString(output);
+                break;
+            }
+            case "not" : {
+                outputResult = Long.toString(programmerCalc.bitwiseOperation.notOperation(input1));
+                break;
+            }
+            case "rsh" : {
+                String input2 = calculatorDisplay.getText();
+                outputResult = Long.toString(programmerCalc.bitwiseOperation.rightShiftOperation(input1,Integer.parseInt(input2)));
+                break;
+            }
+            case "lsh" : {
+                String input2 = calculatorDisplay.getText();
+                outputResult = Long.toString(programmerCalc.bitwiseOperation.leftShiftOperation(input1,Integer.parseInt(input2)));
+                break;
+            }
+            case "xor" : {
+                String input2 = calculatorDisplay.getText();
+                outputResult = Long.toString(programmerCalc.bitwiseOperation.xorOperation(input1,Integer.parseInt(input2)));
+                break;
+            }
+            case "and" : {
+                String input2 = calculatorDisplay.getText();
+                outputResult = Long.toString(programmerCalc.bitwiseOperation.andOperation(input1,Integer.parseInt(input2)));
+                break;
+            }
+            case "or" : {
+                String input2 = calculatorDisplay.getText();
+                outputResult = Long.toString(programmerCalc.bitwiseOperation.orOperation(input1,Integer.parseInt(input2)));
+                break;
+            }
+            case "add" : {
+                int input2 = Integer.parseInt(calculatorDisplay.getText());
+                outputResult = Long.toString(input1+input2);
+                break;
+            }
+            case "subtract" : {
+                int input2 = Integer.parseInt(calculatorDisplay.getText());
+                outputResult = Long.toString(input1-input2);
+                break;
+            }
+            case "divide" : {
+                int input2 = Integer.parseInt(calculatorDisplay.getText());
+                if(input2 !=0)
+                    outputResult = Long.toString(input1/input2);
+                else
+                    outputResult = "0";
+                break;
+            }
+            case "multiply" : {
+                int input2 = Integer.parseInt(calculatorDisplay.getText());
+                outputResult = Long.toString(input1*input2);
+                break;
+            }
+            case "ror" : {
+                String input = calculatorDisplay.getText();
+                outputResult = Long.toString(programmerCalc.bitwiseOperation.rightRotateOperation(Integer.parseInt(input)));
+                break;
+            }
+            case "rol" : {
+                String input = calculatorDisplay.getText();
+                outputResult = Long.toString(programmerCalc.bitwiseOperation.leftRotateOperation(Integer.parseInt(input)));
+                break;
+            }
+            
+            default : outputResult ="0";
+        }
+        
         calculatorDisplay.setText(outputResult);
         binaryOutput.setText(programmerCalc.decimalInput.convertDecimalToBinary(outputResult));
         hexadecimalOutput.setText(programmerCalc.decimalInput.convertDecimalToHexaDecimal(outputResult));
         octalOutput.setText(programmerCalc.decimalInput.convertDecimalToOctal(outputResult));
-        outputResult="0";
     }//GEN-LAST:event_equalsButtonMouseClicked
 
     private void notButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_notButtonMouseClicked
-        String input = calculatorDisplay.getText();
-        outputResult = Long.toString(programmerCalc.bitwiseOperation.notOperation(Integer.parseInt(input)));
+        input1 = Integer.parseInt(calculatorDisplay.getText());
+        choice = "not";
     }//GEN-LAST:event_notButtonMouseClicked
 
     private void twoButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_twoButtonMouseClicked
-        if("0".equals(calculatorDisplay.getText()))
+        if("0".equals(calculatorDisplay.getText()) || "".equals(calculatorDisplay.getText()))
         calculatorDisplay.setText("2");
         else
         calculatorDisplay.setText( calculatorDisplay.getText() + "2");
     }//GEN-LAST:event_twoButtonMouseClicked
 
     private void rshButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rshButtonMouseClicked
-       String input1 = calculatorDisplay.getText();
-       String input2 = calculatorDisplay.getText();
-       outputResult = Long.toString(programmerCalc.bitwiseOperation.rightShiftOperation(Integer.parseInt(input1),Integer.parseInt(input2)));
+       input1 =Integer.parseInt(calculatorDisplay.getText());
+       calculatorDisplay.setText("");
+       choice = "rsh";
     }//GEN-LAST:event_rshButtonMouseClicked
 
     private void lshButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lshButtonMouseClicked
-       String input1 = calculatorDisplay.getText();
-       String input2 = calculatorDisplay.getText();
-       outputResult = Long.toString(programmerCalc.bitwiseOperation.leftShiftOperation(Integer.parseInt(input1),Integer.parseInt(input2)));
+       input1 = Integer.parseInt(calculatorDisplay.getText());
+       calculatorDisplay.setText("");
+       choice = "lsh";
     }//GEN-LAST:event_lshButtonMouseClicked
 
     private void xorButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xorButtonMouseClicked
-       String input1 = calculatorDisplay.getText();
-       String input2 = calculatorDisplay.getText();
-       outputResult = Long.toString(programmerCalc.bitwiseOperation.xorOperation(Integer.parseInt(input1),Integer.parseInt(input2))); 
+       input1 = Integer.parseInt(calculatorDisplay.getText());
+       calculatorDisplay.setText("");
+       choice = "xor"; 
     }//GEN-LAST:event_xorButtonMouseClicked
 
     private void andButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_andButtonMouseClicked
-       String input1 = calculatorDisplay.getText();
-       String input2 = calculatorDisplay.getText();
-       outputResult = Long.toString(programmerCalc.bitwiseOperation.andOperation(Integer.parseInt(input1),Integer.parseInt(input2)));
+       input1 = Integer.parseInt(calculatorDisplay.getText());
+       calculatorDisplay.setText("");
+       choice = "and";
     }//GEN-LAST:event_andButtonMouseClicked
 
     private void orButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orButtonMouseClicked
-       String input1 = calculatorDisplay.getText();
-       String input2 = calculatorDisplay.getText();
-       outputResult = Long.toString(programmerCalc.bitwiseOperation.orOperation(Integer.parseInt(input1),Integer.parseInt(input2)));
+       input1 = Integer.parseInt(calculatorDisplay.getText());
+       calculatorDisplay.setText("");
+       choice = "or";
     }//GEN-LAST:event_orButtonMouseClicked
 
     private void threeButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_threeButtonMouseClicked
-        if("0".equals(calculatorDisplay.getText()))
+        if("0".equals(calculatorDisplay.getText()) || "".equals(calculatorDisplay.getText()))
         calculatorDisplay.setText("3");
         else
         calculatorDisplay.setText( calculatorDisplay.getText() + "3");
     }//GEN-LAST:event_threeButtonMouseClicked
 
     private void fourButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fourButtonMouseClicked
-        if("0".equals(calculatorDisplay.getText()))
+        if("0".equals(calculatorDisplay.getText()) || "".equals(calculatorDisplay.getText()))
         calculatorDisplay.setText("4");
         else
         calculatorDisplay.setText( calculatorDisplay.getText() + "4");
     }//GEN-LAST:event_fourButtonMouseClicked
 
     private void plusButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_plusButtonMouseClicked
-        int input1 = Integer.parseInt(calculatorDisplay.getText());
-        int input2 = Integer.parseInt(calculatorDisplay.getText());
-        outputResult = Long.toString(input1+input2);
+        input1 = Integer.parseInt(calculatorDisplay.getText());
+        calculatorDisplay.setText("");
+        choice = "add";
     }//GEN-LAST:event_plusButtonMouseClicked
 
     private void sevenButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sevenButtonMouseClicked
-        if("0".equals(calculatorDisplay.getText()))
+        if("0".equals(calculatorDisplay.getText()) || "".equals(calculatorDisplay.getText()))
         calculatorDisplay.setText("7");
         else
         calculatorDisplay.setText( calculatorDisplay.getText() + "7");
     }//GEN-LAST:event_sevenButtonMouseClicked
 
     private void minusButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minusButtonMouseClicked
-        int input1 = Integer.parseInt(calculatorDisplay.getText());
-        int input2 = Integer.parseInt(calculatorDisplay.getText());
-        outputResult = Long.toString(input1-input2);
+        input1 = Integer.parseInt(calculatorDisplay.getText());
+        calculatorDisplay.setText("");
+        choice = "subtract";
     }//GEN-LAST:event_minusButtonMouseClicked
 
     private void eightButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eightButtonMouseClicked
-        if("0".equals(calculatorDisplay.getText()))
+        if("0".equals(calculatorDisplay.getText()) || "".equals(calculatorDisplay.getText()))
         calculatorDisplay.setText("8");
         else
         calculatorDisplay.setText( calculatorDisplay.getText() + "8");
     }//GEN-LAST:event_eightButtonMouseClicked
 
     private void divideButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_divideButtonMouseClicked
-        int input1 = Integer.parseInt(calculatorDisplay.getText());
-        int input2 = Integer.parseInt(calculatorDisplay.getText());
-        if(input2 !=0)
-            outputResult = Long.toString(input1/input2);
-        else
-            outputResult = "divide by zero Error";
+        input1 = Integer.parseInt(calculatorDisplay.getText());
+        calculatorDisplay.setText("");
+        choice = "divide";
     }//GEN-LAST:event_divideButtonMouseClicked
 
     private void nineButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nineButtonMouseClicked
-        if("0".equals(calculatorDisplay.getText()))
+        if("0".equals(calculatorDisplay.getText()) || "".equals(calculatorDisplay.getText()))
         calculatorDisplay.setText("9");
         else
         calculatorDisplay.setText( calculatorDisplay.getText() + "9");
     }//GEN-LAST:event_nineButtonMouseClicked
 
     private void multiplyButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_multiplyButtonMouseClicked
-        int input1 = Integer.parseInt(calculatorDisplay.getText());
-        int input2 = Integer.parseInt(calculatorDisplay.getText());
-        outputResult = Long.toString(input1*input2);
+        input1 = Integer.parseInt(calculatorDisplay.getText());
+        calculatorDisplay.setText("");
+        choice = "multiply";
     }//GEN-LAST:event_multiplyButtonMouseClicked
 
     private void backspaceButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backspaceButtonMouseClicked
@@ -1394,7 +1472,11 @@ public class ProgrammerCalculatorPanel extends javax.swing.JPanel {
         if(length > 0) {
             StringBuilder back = new StringBuilder(calculatorDisplay.getText());
             back.deleteCharAt(number);
-            calculatorDisplay.setText(back.toString());
+            String newString = back.toString();
+            calculatorDisplay.setText(newString);
+            binaryOutput.setText(programmerCalc.decimalInput.convertDecimalToBinary(newString));
+            hexadecimalOutput.setText(programmerCalc.decimalInput.convertDecimalToHexaDecimal(newString));
+            octalOutput.setText(programmerCalc.decimalInput.convertDecimalToOctal(newString));
         }
     }//GEN-LAST:event_backspaceButtonMouseClicked
 
@@ -1409,11 +1491,15 @@ public class ProgrammerCalculatorPanel extends javax.swing.JPanel {
 
     private void clearButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseClicked
         calculatorDisplay.setText("0");
+        choice = "0";
         binaryOutput.setText("0");
         hexadecimalOutput.setText("0");
         octalOutput.setText("0");
-        outputResult="0";
     }//GEN-LAST:event_clearButtonMouseClicked
+
+    private void rolButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rolButtonMouseClicked
+        choice = "rol";
+    }//GEN-LAST:event_rolButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

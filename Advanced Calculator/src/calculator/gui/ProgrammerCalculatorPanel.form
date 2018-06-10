@@ -1451,6 +1451,9 @@
               <Dimension value="[80, 80]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rolButtonMouseClicked"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">
