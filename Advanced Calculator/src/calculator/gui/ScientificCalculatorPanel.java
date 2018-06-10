@@ -2210,6 +2210,7 @@ public class ScientificCalculatorPanel extends javax.swing.JPanel {
         String output = scientificCalculator.evaluator.evaluate(expression);
         answerDisplay.setText(output);
         expressionDisplay.setText(expression + " = " + output);
+        expression = "";
     }//GEN-LAST:event_equalsButtonMouseClicked
 
     private void eButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eButtonMouseClicked
