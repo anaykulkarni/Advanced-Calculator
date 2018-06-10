@@ -31,6 +31,7 @@ public class CalulatorJFrame extends javax.swing.JFrame {
         //Intialize JPanels
         scientificCalculatorPanel1.setVisible(true);
         programmerCalculatorPanel1.setVisible(false);
+        dateCalculationPanel1.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -54,6 +55,7 @@ public class CalulatorJFrame extends javax.swing.JFrame {
         mainPanel = new javax.swing.JLayeredPane();
         scientificCalculatorPanel1 = new calculator.gui.ScientificCalculatorPanel();
         programmerCalculatorPanel1 = new calculator.gui.ProgrammerCalculatorPanel();
+        dateCalculationPanel1 = new calculator.gui.DateCalculationPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -282,6 +284,7 @@ public class CalulatorJFrame extends javax.swing.JFrame {
 
         mainPanel.setLayer(scientificCalculatorPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         mainPanel.setLayer(programmerCalculatorPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        mainPanel.setLayer(dateCalculationPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -289,7 +292,9 @@ public class CalulatorJFrame extends javax.swing.JFrame {
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(programmerCalculatorPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(programmerCalculatorPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dateCalculationPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scientificCalculatorPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(866, 866, 866))
@@ -300,7 +305,10 @@ public class CalulatorJFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scientificCalculatorPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(programmerCalculatorPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                        .addComponent(programmerCalculatorPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dateCalculationPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 860, 720));
@@ -316,6 +324,7 @@ public class CalulatorJFrame extends javax.swing.JFrame {
         //switching Panels.
         scientificCalculatorPanel1.setVisible(true);
         programmerCalculatorPanel1.setVisible(false);
+        dateCalculationPanel1.setVisible(false);
     }//GEN-LAST:event_btn_1MouseReleased
 
     private void btn_2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseReleased
@@ -326,12 +335,18 @@ public class CalulatorJFrame extends javax.swing.JFrame {
         //switching Panels.
         scientificCalculatorPanel1.setVisible(false);
         programmerCalculatorPanel1.setVisible(true);
+        dateCalculationPanel1.setVisible(false);
     }//GEN-LAST:event_btn_2MouseReleased
 
     private void btn_3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MouseReleased
         setColor(btn_3);
         ind_3.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_1}, new JPanel[]{ind_1, ind_2});
+        
+        //switching Panels.
+        scientificCalculatorPanel1.setVisible(false);
+        programmerCalculatorPanel1.setVisible(false);
+        dateCalculationPanel1.setVisible(true);
     }//GEN-LAST:event_btn_3MouseReleased
 
     private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
@@ -399,6 +414,7 @@ public class CalulatorJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel btn_1;
     private javax.swing.JPanel btn_2;
     private javax.swing.JPanel btn_3;
+    private calculator.gui.DateCalculationPanel dateCalculationPanel1;
     private javax.swing.JPanel ind_1;
     private javax.swing.JPanel ind_2;
     private javax.swing.JPanel ind_3;
