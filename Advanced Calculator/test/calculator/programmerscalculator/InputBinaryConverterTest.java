@@ -13,8 +13,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author kisho
+ * JUnit Test class for the Input Binary converter.
+ * 
+ * @version     1.0
+ * @author      Kishore
  */
 public class InputBinaryConverterTest {
     InputBinaryConverter binaryConvert;
