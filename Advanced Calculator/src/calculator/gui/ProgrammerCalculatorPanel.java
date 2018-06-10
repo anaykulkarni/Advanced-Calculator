@@ -1356,7 +1356,7 @@ public class ProgrammerCalculatorPanel extends javax.swing.JPanel {
                 break;
             }
             
-            default : outputResult ="0";
+            default : outputResult =calculatorDisplay.getText();;
         }
         
         calculatorDisplay.setText(outputResult);
