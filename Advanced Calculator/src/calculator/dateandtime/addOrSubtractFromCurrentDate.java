@@ -11,16 +11,25 @@ import java.util.Calendar;
 
 /**
  *
- * @author 
+ * @author Kartik
  */
 public class addOrSubtractFromCurrentDate {
+    /**
+     * This class contains the method to add and subtract the month to the current date
+     * @param n this n returns the month after adding or subtracting the date to the current date
+     * @return 
+     */
     public  String addSubtractMonth(int n){
       DateFormat dateFormat=new SimpleDateFormat("mm/dd/yyyy");
         Calendar cal= Calendar .getInstance();
         cal.add(Calendar.MONTH,n);
         String result =dateFormat.format(cal.getTime());
         return result;  
-        
+    /**
+     * This contains the method to add and subtract the year to the current date
+     * @param n this n returns the year after adding or subtracting the date to the current date
+     * @return
+     */    
         
     }
     public String addSubtractYear(int n){
