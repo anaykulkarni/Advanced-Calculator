@@ -1,9 +1,12 @@
 # Advanced-Calculator
 ### A calculator with features of a scientific calculator, programmer's calculator and date related calculations. The Advanced calculator is a Java Swing application developed using [JDK 1.8.0](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [NetBeans 8.2](https://netbeans.org/downloads/?pagelang=pt_BR).  
-#### The project implements the SOLID design principles and Best Coding practices. The application development was Test-Driven and test cases for the code model have been implemented using JUnit classes. Also, the Java Documentation is available for the code model. 
+#### The project implements the SOLID design principles and Best Coding practices. The application development was Test-Driven and test cases for the code model have been implemented using JUnit classes. Also, the Java Documentation is available for the code model.  
 
 #### Running the project:
-- Clone the project in NetBeans and Run on JRE 1.8.0.
+- Clone the project in NetBeans and Run on JRE 1.8.0.  
+#### To view JavaDoc, 
+- Extract the archive, javadoc.rar or,
+- In NetBeans, go to 'run' and select 'Generate Java Doc'.  
 
 The advanced calculator application consists of three functional units,
 1. Scientific Calculator 
