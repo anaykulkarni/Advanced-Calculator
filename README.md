@@ -31,3 +31,9 @@ The advanced calculator application consists of three functional units,
   - For Operations involving one input, like not ,RoR ,RoL .First give the input, then select the operation to be performed and then hit equal to button ( = ).Else no result will be shown.
   
  - To Convert a decimal number into other base value systems. just enter the number and press Equal to sign ( = ).
+
+#### Date and Time Calculation.
+
+- This date and calculation involves two types like Finding the difference between two dates and for the current date or todays date , it adds the date or subtracts the date 
+-Difference between two dates module takes two input dates with date month and year and it will show thw differnce between two dates in day ,month and year
+-this  add or subtract module take input as date to either add or subtract. For the current date it will add the date or subtract the date and give result in date as day ,month and year 
