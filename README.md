@@ -40,3 +40,8 @@ The advanced calculator application consists of three functional units,
 - This date and calculation involves two types like Finding the difference between two dates and for the current date or todays date , it adds the date or subtracts the date 
 -Difference between two dates module takes two input dates with date month and year and it will show thw differnce between two dates in day ,month and year
 -this  add or subtract module take input as date to either add or subtract. For the current date it will add the date or subtract the date and give result in date as day ,month and year 
+
+#### Screenshots:
+![advancedcalc](https://user-images.githubusercontent.com/38681469/47602001-e8c15780-d9f5-11e8-93f4-71b955e1cd37.jpg)
+
+![advancedcalc2](https://user-images.githubusercontent.com/38681469/47602012-0b537080-d9f6-11e8-8d43-b4509c3a32cd.jpg)
