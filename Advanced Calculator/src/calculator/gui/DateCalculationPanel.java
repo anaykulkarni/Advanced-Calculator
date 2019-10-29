@@ -5,17 +5,44 @@
  */
 package calculator.gui;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import static java.time.temporal.TemporalQueries.localDate;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import calculator.dateandtime.AddOrSubDays;
+import calculator.dateandtime.DifferenceDate;
+
 /**
  *
  * @author Anay
  */
 public class DateCalculationPanel extends javax.swing.JPanel {
 
+    private Object from;
+    DifferenceDate DiffDate;
+    AddOrSubDays asd ;
     /**
      * Creates new form DateCalculationPanel
      */
     public DateCalculationPanel() {
         initComponents();
+        DiffDate = new DifferenceDate();
+        asd = new AddOrSubDays();
+        int num=1000;
+        for(int i=0;i<num;i++){
+            years.addItem(String.valueOf(i));
+            months.addItem(String.valueOf(i));
+            days.addItem(String.valueOf(i)); 
+        }
+        fromDate.setDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        fromDP.setDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        toDP.setDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        fromDP.setFormats(new String[] {"yyyy-MM-dd"});
+        toDP.setFormats(new String[] {"yyyy-MM-dd"});
+        fromDate.setFormats(new String[] {"yyyy-MM-dd"});
     }
 
     /**
@@ -27,34 +54,361 @@ public class DateCalculationPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel("Date Calculator");
+        differencePanel = new javax.swing.JPanel();
+        differnceLabel = new javax.swing.JLabel("Difference Between Dates");
+        fromLabel = new javax.swing.JLabel("From:");
+        fromDP = new org.jdesktop.swingx.JXDatePicker();
+        toLabel = new javax.swing.JLabel("To:");
+        toDP = new org.jdesktop.swingx.JXDatePicker();
+        diffbtn = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel("DIFFERENCE");
+        answer = new javax.swing.JLabel();
+        addSubPanel = new javax.swing.JPanel();
+        addSubLabel = new javax.swing.JLabel("Add Or Subtract From Current Date");
+        fromDate = new org.jdesktop.swingx.JXDatePicker();
+        fromLabel1 = new javax.swing.JLabel("From:");
+        years = new javax.swing.JComboBox<>();
+        months = new javax.swing.JComboBox<>();
+        days = new javax.swing.JComboBox<>();
+        subbtn = new javax.swing.JPanel();
+        subLabel = new javax.swing.JLabel("SUB");
+        addbtn = new javax.swing.JPanel();
+        addLabel = new javax.swing.JLabel("ADD");
+        yearLabel = new javax.swing.JLabel("Years");
+        monthLabel = new javax.swing.JLabel("Months");
+        daysLabel = new javax.swing.JLabel("Days");
+        resultDate = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(226, 226, 226));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(860, 720));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Not Available");
+        titleLabel.setBackground(new java.awt.Color(255, 204, 204));
+        titleLabel.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+
+        differencePanel.setBackground(new java.awt.Color(255, 255, 255));
+        differencePanel.setPreferredSize(new java.awt.Dimension(430, 720));
+
+        differnceLabel.setBackground(new java.awt.Color(255, 255, 255));
+        differnceLabel.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        differnceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        fromLabel.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+
+        toLabel.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+
+        diffbtn.setBackground(new java.awt.Color(234, 236, 239));
+        diffbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                diffbtnMouseClicked(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout diffbtnLayout = new javax.swing.GroupLayout(diffbtn);
+        diffbtn.setLayout(diffbtnLayout);
+        diffbtnLayout.setHorizontalGroup(
+            diffbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(diffbtnLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        diffbtnLayout.setVerticalGroup(
+            diffbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(diffbtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+
+        answer.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        answer.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 153, 153), null));
+
+        javax.swing.GroupLayout differencePanelLayout = new javax.swing.GroupLayout(differencePanel);
+        differencePanel.setLayout(differencePanelLayout);
+        differencePanelLayout.setHorizontalGroup(
+            differencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(differencePanelLayout.createSequentialGroup()
+                .addGroup(differencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(differencePanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(differnceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE))
+                    .addGroup(differencePanelLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(differencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(toDP, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                            .addComponent(toLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fromDP, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                            .addComponent(fromLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(diffbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(answer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        differencePanelLayout.setVerticalGroup(
+            differencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(differencePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(differnceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(fromLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(fromDP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93)
+                .addComponent(toLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(toDP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83)
+                .addComponent(diffbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
+                .addComponent(answer, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(163, Short.MAX_VALUE))
+        );
+
+        addSubPanel.setBackground(new java.awt.Color(255, 255, 255));
+        addSubPanel.setPreferredSize(new java.awt.Dimension(430, 720));
+
+        addSubLabel.setBackground(new java.awt.Color(255, 255, 255));
+        addSubLabel.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        addSubLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        fromLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+
+        subbtn.setBackground(new java.awt.Color(234, 236, 239));
+        subbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                subbtnMouseClicked(evt);
+            }
+        });
+
+        subLabel.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        subLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout subbtnLayout = new javax.swing.GroupLayout(subbtn);
+        subbtn.setLayout(subbtnLayout);
+        subbtnLayout.setHorizontalGroup(
+            subbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(subbtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(subLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        subbtnLayout.setVerticalGroup(
+            subbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(subbtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(subLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        addbtn.setBackground(new java.awt.Color(234, 236, 239));
+        addbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addbtnMouseClicked(evt);
+            }
+        });
+
+        addLabel.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        addLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout addbtnLayout = new javax.swing.GroupLayout(addbtn);
+        addbtn.setLayout(addbtnLayout);
+        addbtnLayout.setHorizontalGroup(
+            addbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addbtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(addLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        addbtnLayout.setVerticalGroup(
+            addbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addbtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(addLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        yearLabel.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+
+        monthLabel.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+
+        daysLabel.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+
+        resultDate.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        resultDate.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 153, 153), null));
+
+        javax.swing.GroupLayout addSubPanelLayout = new javax.swing.GroupLayout(addSubPanel);
+        addSubPanel.setLayout(addSubPanelLayout);
+        addSubPanelLayout.setHorizontalGroup(
+            addSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addSubPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(addSubLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(addSubPanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(addSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(yearLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(years, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(addSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(monthLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(months, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(addSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(daysLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(days, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31))
+            .addGroup(addSubPanelLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(addSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fromLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fromDate, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addSubPanelLayout.createSequentialGroup()
+                .addGap(0, 39, Short.MAX_VALUE)
+                .addComponent(addbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(subbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addSubPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(resultDate, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
+        );
+        addSubPanelLayout.setVerticalGroup(
+            addSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addSubPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(addSubLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(fromLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(fromDate, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95)
+                .addGroup(addSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(monthLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(yearLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(daysLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(addSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(years, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(days, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(months, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(78, 78, 78)
+                .addGroup(addSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(addbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(subbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66)
+                .addComponent(resultDate, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(118, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(310, 310, 310)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(365, Short.MAX_VALUE))
+                .addGap(0, 30, Short.MAX_VALUE)
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(differencePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addSubPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(245, 245, 245)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(424, Short.MAX_VALUE))
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(differencePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
+                    .addComponent(addSubPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void diffbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_diffbtnMouseClicked
+        try{
+            Date initialDate = fromDP.getDate();
+            Date finalDate = toDP.getDate();
+            
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
+            String strDate = dateFormat.format(initialDate); 
+            String endDate = dateFormat.format(finalDate);
+            
+            String total= DiffDate.dateDiff(strDate, endDate);
+            answer.setText(total);
+        }catch(Exception ex){
+            fromDP.setDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+            toDP.setDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        }
+    }//GEN-LAST:event_diffbtnMouseClicked
+
+    private void addbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addbtnMouseClicked
+        // TODO add your handling code here:
+        try{
+            Date initDate = fromDate.getDate();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
+            String startDate = dateFormat.format(initDate); 
+
+            long addYears = Long.parseLong((String) years.getSelectedItem());
+            long addMonths = Long.parseLong((String) months.getSelectedItem());
+            long addDays = Long.parseLong((String) days.getSelectedItem());
+            System.out.println(addYears);
+            startDate = asd.add(startDate, addYears, addMonths, addDays);
+            resultDate.setText(String.valueOf(startDate));
+        }catch(Exception ex){
+            fromDate.setDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        }
+    }//GEN-LAST:event_addbtnMouseClicked
+
+    private void subbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subbtnMouseClicked
+        // TODO add your handling code here:
+        try{
+            Date initDate = fromDate.getDate();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
+            String startDate = dateFormat.format(initDate);
+
+            long addYears = Long.parseLong((String) years.getSelectedItem());
+            long addMonths = Long.parseLong((String) months.getSelectedItem());
+            long addDays = Long.parseLong((String) days.getSelectedItem());
+
+            startDate = asd.sub(startDate, addYears, addMonths, addDays);
+            resultDate.setText(String.valueOf(startDate));
+        }catch(Exception ex){
+            fromDate.setDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        }
+    }//GEN-LAST:event_subbtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel addLabel;
+    private javax.swing.JLabel addSubLabel;
+    private javax.swing.JPanel addSubPanel;
+    private javax.swing.JPanel addbtn;
+    private javax.swing.JLabel answer;
+    private javax.swing.JComboBox<String> days;
+    private javax.swing.JLabel daysLabel;
+    private javax.swing.JPanel diffbtn;
+    private javax.swing.JPanel differencePanel;
+    private javax.swing.JLabel differnceLabel;
+    private org.jdesktop.swingx.JXDatePicker fromDP;
+    private org.jdesktop.swingx.JXDatePicker fromDate;
+    private javax.swing.JLabel fromLabel;
+    private javax.swing.JLabel fromLabel1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel monthLabel;
+    private javax.swing.JComboBox<String> months;
+    private javax.swing.JLabel resultDate;
+    private javax.swing.JLabel subLabel;
+    private javax.swing.JPanel subbtn;
+    private javax.swing.JLabel titleLabel;
+    private org.jdesktop.swingx.JXDatePicker toDP;
+    private javax.swing.JLabel toLabel;
+    private javax.swing.JLabel yearLabel;
+    private javax.swing.JComboBox<String> years;
     // End of variables declaration//GEN-END:variables
 }
